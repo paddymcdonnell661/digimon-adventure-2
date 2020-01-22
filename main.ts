@@ -106,7 +106,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.flower, function (sprite, otherS
 6 6 5 5 5 6 6 . 
 . f f f f f . . 
 f . 5 5 5 . f . 
-. . f 5 f . . . 
+. . 5 5 5 . . . 
 . f . f . f . . 
 f . . . . . f . 
 `, SpriteKind.bee)
@@ -286,6 +286,7 @@ for (let CoinPosition of tiles.getTilesByType(myTiles.tile2)) {
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.coin)
     tiles.placeOnTile(coin2, CoinPosition)
+    tiles.setTileAt(CoinPosition, myTiles.tile0)
     animation.runImageAnimation(
     coin2,
     [img`
@@ -468,7 +469,6 @@ for (let CoinPosition of tiles.getTilesByType(myTiles.tile2)) {
     2000,
     true
     )
-    pause(500)
 }
 for (let FlowerPosition of tiles.getTilesByType(myTiles.tile3)) {
     flower = sprites.create(img`
@@ -490,7 +490,7 @@ for (let FlowerPosition of tiles.getTilesByType(myTiles.tile3)) {
 . . . . . . 7 7 7 7 . . . . . . 
 `, SpriteKind.flower)
     tiles.placeOnTile(flower, FlowerPosition)
-    pause(500)
+    tiles.setTileAt(FlowerPosition, myTiles.tile0)
 }
 game.onUpdate(function () {
     if (bat.y >= scene.screenHeight()) {
